@@ -6,13 +6,16 @@ This template should help get you started developing with Vue 3 in Vite.
 **table of contents**
 - [vue-3](#vue-3)
 - [Recommended IDE Setup](#recommended-ide-setup)
+  - [Type Support for `.vue` Imports in TS](#type-support-for-vue-imports-in-ts)
   - [Customize configuration](#customize-configuration)
 - [Project Setup](#project-setup)
 - [Run localhost](#run-localhost)
     - [Sync checkout branch to latest chnages](#sync-checkout-branch-to-latest-chnages)
     - [Compile and Hot-Reload for Development](#compile-and-hot-reload-for-development)
     - [Lint with ESLint](#lint-with-eslint)
-    - [Compile and Minify for Production](#compile-and-minify-for-production)
+    - [Type-Check, Compile and Minify for Production](#type-check-compile-and-minify-for-production)
+    - [Run Unit Tests with Vitest](#run-unit-tests-with-vitest)
+    - [Run End-to-End Tests with Playwright](#run-end-to-end-tests-with-playwright)
 - [Deploy to gh-pages](#deploy-to-gh-pages)
 - [Additional Docs](#additional-docs)
 
@@ -23,6 +26,10 @@ This template should help get you started developing with Vue 3 in Vite.
 - Extensions
   - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
   - Markdown
+
+## Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
 
 ## Customize configuration
 
@@ -72,10 +79,35 @@ npm run lint
 npm run format
 ```
 
-### Compile and Minify for Production
+### Type-Check, Compile and Minify for Production
 
 ```sh
 npm run build
+```
+
+### Run Unit Tests with [Vitest](https://vitest.dev/)
+
+```sh
+npm run test:unit
+```
+
+### Run End-to-End Tests with [Playwright](https://playwright.dev)
+
+```sh
+# Install browsers for the first run
+npx playwright install
+
+# When testing on CI, must build the project first
+npm run build
+
+# Runs the end-to-end tests
+npm run test:e2e
+# Runs the tests only on Chromium
+npm run test:e2e -- --project=chromium
+# Runs the tests of a specific file
+npm run test:e2e -- tests/example.spec.ts
+# Runs the tests in debug mode
+npm run test:e2e -- --debug
 ```
 
 # Deploy to gh-pages
