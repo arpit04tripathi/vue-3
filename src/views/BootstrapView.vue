@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <h1>This is bootstrap view</h1>
-        <TestBootstrapIcons />
-    </div>
+  <div>
+    <h1>This is bootstrap view</h1>
+    <TestBootstrapIcons />
+  </div>
 </template>
 
 <script setup lang="ts">
