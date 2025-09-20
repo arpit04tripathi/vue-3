@@ -19,7 +19,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue';
 import TheWelcome from '@/components/TheWelcome.vue';
