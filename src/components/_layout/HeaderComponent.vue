@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="bg-gradient bg-light p-2 border-bottom border-dark border-3">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <!-- Bootstrap 5 Navbar image and text https://getbootstrap.com/docs/5.3/components/navbar/#image-and-text -->
